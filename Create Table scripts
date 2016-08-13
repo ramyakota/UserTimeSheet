@@ -1,0 +1,18 @@
+Create table users 
+(
+userid int primary key not null identity(1,1),
+username varchar(50) not null,
+password varchar(20) not null,
+firstname varchar(20) not null,
+lastname varchar(20) not null,
+email varchar(50) not null
+)
+
+
+Create table tbl_usertimeSheet
+(
+userid int FOREIGN KEY REFERENCES users(userid) ,
+regularhours int not null,
+overtimehours int not null,
+day date not null
+)
